@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle `
         margin: 0;
         padding: 0;
         font-family: 'Roboto', sans-serif;
-        max-width: 100vw;
+        /* max-width: 100vw; */
     }
 `;
 

@@ -23,7 +23,7 @@ const Middle = styled.div`
   position: relative;
 
   img {
-    width: 30.65em;
+    max-width: 30em;
     height: 15em;
   }
 `;

@@ -17,7 +17,9 @@ import Cyberpunk2077 from '../../assets/img/product_cyberpunk2077.png';
 import DonkeyKong from '../../assets/img/product_donkey_kong_country_tropical_freeze.png';
 
 import MK from '../../assets/img/principal_banner_desktop.jpg'
+import MK2 from '../../assets/img/principal_banner_mobile.jpg'
 import RD from '../../assets/img/principal_banner_desktop_02.jpg'
+import RD2 from '../../assets/img/principal_banner_mobile_02.jpg'
 
 
 export default function Home(){
@@ -26,8 +28,8 @@ export default function Home(){
             {/* <Modal /> */}
             <Sidebar />
             <Slider 
-                Img1={MK} Alt1="MK" Text="MORTAL KOMBAT" Real1="299" Cents1="99" InfoText1="Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova. Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a estratégia como o estilo de luta."
-                Img2={RD} Alt2="RD" Text2="RED DEAD REDEMPTION II" Real2="399" Cents2="99" InfoText2="Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption."
+                Img1={MK} Img12={MK2} Alt1="MK" Text="MORTAL KOMBAT" Real1="299" Cents1="99" InfoText1="Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova. Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a estratégia como o estilo de luta."
+                Img2={RD} Img22={RD2} Alt2="RD" Text2="RED DEAD REDEMPTION II" Real2="399" Cents2="99" InfoText2="Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption."
             />
 
             <Banners>
@@ -64,12 +66,19 @@ const Banners = styled.div `
     position: relative;
     padding: 0 75px;
     top: -7rem;
+
+    @media(max-width: 750px){
+    position: relative;
+    padding: 0 75px;
+    top: 0rem;
+    }
 `;
 
 const DestaqueSessao = styled.div `
     display: flex;
     align-items: center;
-    margin-left: 13%;
+    padding-left: 20%;
+    left: 55%;
     margin-bottom: 55px;
 
     svg {
@@ -83,9 +92,17 @@ const DestaqueSessao = styled.div `
         font-weight: 300;
         font-size: 36px;
     }
+
+    @media(max-width: 600px){
+        svg, h1 {
+            font-size: 28px;
+            padding-top: 25px;
+        }
+    }
 `;
 
 const ContentDestaque = styled.div`
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 `;

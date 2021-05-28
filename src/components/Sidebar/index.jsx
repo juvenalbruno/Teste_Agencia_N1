@@ -69,7 +69,7 @@ export default function Sidebar(){
 
                 <Link to="" >
                     <HiOutlineShoppingBag />
-                    <p id="number" >2</p>
+                    <spam id="number" >2</spam>
                 </Link>
             </ContentWrapp2>
         </Content>
@@ -77,11 +77,11 @@ export default function Sidebar(){
 }
 
 const Content = styled.div `
-    width: 100vw;
-    max-width: 100%;
+    max-width: 100vw;
+    width: 100%;
 
     height: 35px;
-    margin-top: 25px;
+    margin: 25px auto;
 
     display: flex;
     position: absolute;
@@ -116,7 +116,7 @@ const Content = styled.div `
     }
 `;
 const ContentWrapp1 = styled.div `
-    width: 30rem;
+    width: 25rem;
 
     display: flex;
     align-items: center;
@@ -128,9 +128,15 @@ const ContentWrapp1 = styled.div `
         cursor: pointer;
     }
 
+    @media(max-width: 600px){
+        img {
+            width: 107px;
+        }
+    }
+
 `;
 const ContentWrapp2 = styled.div `
-    width: 30rem;
+    width: 25rem;
     
     display: flex;
     align-items: center;
@@ -154,12 +160,24 @@ const ContentWrapp2 = styled.div `
     #plane {
         transform: rotate(20deg);
     }
+
+    @media(max-width: 600px) {
+            padding: 0 15px;
+        svg {
+            margin: 0 10px;
+            
+        }
+        p, hr {
+            display: none;
+        }
+    }
 `;
 const ContentMenu = styled.div`
     position: absolute;
     display: none;
     margin-top: 330px;
     flex-direction: column;
+    z-index: 8;
 
     .triangulo {
         width: 0; 
@@ -212,4 +230,7 @@ const ContentMenu = styled.div`
         }
     }
 
+    @media(max-width: 450px){
+        
+    }
 `;

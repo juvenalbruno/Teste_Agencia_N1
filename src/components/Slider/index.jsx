@@ -25,9 +25,13 @@ export default function Slider(props){
 
     return(
         <ComponentImg>
-                <div>
+                <div id="desktop" >
                     <img src={props.Img1} alt={props.Alt1} style={{display: hability}}/>
                     <img src={props.Img2} alt={props.Alt2} style={{display: hability2}} />      
+                </div>
+                <div id="mobile">
+                    <img className="mobile" src={props.Img12} alt={props.Alt1} style={{display: hability}}/>
+                    <img className="mobile" src={props.Img22} alt={props.Alt2} style={{display: hability2}} />      
                 </div>
 
                 <Announcement style={{display: hability}}>
@@ -63,7 +67,7 @@ export default function Slider(props){
 
 const ComponentImg = styled.div`
     max-width: 100vw;
-    height: 590px;
+    max-height: 590px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -72,12 +76,38 @@ const ComponentImg = styled.div`
     img {
         width: 100%;
         height: 590px;
+        image-rendering: optimizeQuality;
     };
+
+    #mobile {
+        display: none;
+    }
+
+    @media(max-width: 750px) {
+        flex-direction: column;
+
+        hr {
+            display: none;
+        }
+        img {
+            height: 320px ;
+        };
+    }
+
+    @media(max-width: 390px) {
+        
+        #desktop {
+            display: none ;
+        }
+        #mobile {
+            display: flex;
+        }
+    }
 `;
 const Announcement = styled.div`
     position: absolute;
     width: 414px;
-    margin-right: 18%;
+    margin-right: 20%;
     
     display: flex;
     flex-direction: column;
@@ -85,7 +115,6 @@ const Announcement = styled.div`
 
 
     color: white;
-    padding: 25px;
     border-radius: 5px;
     
     h1 {
@@ -108,6 +137,31 @@ const Announcement = styled.div`
         font-weight: 300;
         line-height: 1.5;
         margin: 15px 0;
+        text-overflow: clip;
+    }
+    @media(max-width: 750px){
+        display: flex;
+        width: 100%;
+        margin: 65px ;
+        padding: 10px 0;
+        background-color: #00000065;
+
+        h1 {
+            font-size: 26px;
+            padding: 0 25px 0 55px;
+        }
+        h2 {
+            font-size: 48px;
+            display: flex;
+            padding: 0 25px 0 55px;
+        }
+        span { 
+            font-size: 28px;
+        }
+        p {
+            font-size: 12px;
+            padding: 0 25px 0 55px;
+        }
     }
 `;
 const Info = styled.div`  
@@ -132,6 +186,15 @@ const Info = styled.div`
         width: 110px;
         background-color: white;
         border: 0;
+    }
+
+    @media(max-width: 750px) {
+        width: 97%;
+        position: relative;
+        margin-right: 0;
+        transform: rotate(0deg);
+        border-radius: 0 0 0 18px;
+        display: flex;
     }
     
 `;
@@ -160,11 +223,30 @@ const Cont = styled.div`
 
     font-size: 14px;
     line-height: 2;
+
+    @media(max-width: 750px) {
+        width: 168px;
+        transform: rotate(0deg);
+        border-radius: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
 `;
 const Icon = styled.div`
+    display: flex;
+    justify-content: center;
 
     svg {
         font-size: 25px;
         cursor: pointer;
+    }
+
+    @media(max-width: 750px) {
+        margin: 10px;
+        svg {
+            margin: 0 10px;
+        }
     }
 `;
